@@ -1,12 +1,24 @@
 class Bird:
+    def make_sound(self):
+        return "Chirp!"
+
+class FlyingBird(Bird):
     def fly(self):
         return "I can fly!"
 
-class Penguin(Bird):
-    def fly(self):
-        return "I can't fly, but I can swim!"
+class NonFlyingBird(Bird):
+    def swim(self):
+        return "I can swim!"
+
+class Sparrow(FlyingBird):
+    pass
+
+class Penguin(NonFlyingBird):
+    pass
 
 
-birds = [Bird(), Penguin()]
-for bird in birds:
-    print(bird.fly())
+sparrow = Sparrow()
+print(sparrow.fly())
+
+penguin = Penguin()
+print(penguin.swim())
